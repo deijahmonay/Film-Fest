@@ -10,7 +10,7 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 
 // PORT
-const port = process.env.PORT || "4000";
+const port = process.env.PORT || "3000";
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -27,7 +27,7 @@ app.use(morgan('dev'));
 
 
 app.get("/", async(req, res) => {
-  res.send("WAZZZUP! -- Scary movie quote")
+  res.render("index.ejs")
 })
 
 
