@@ -10,9 +10,9 @@ const morgan = require("morgan");
 // PORT
 const port = process.env.PORT || "4000";
 
-moongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
-mongoose.connect.om("connected", () => {
+mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}`);
 });
 
@@ -20,7 +20,7 @@ mongoose.connect.om("connected", () => {
 
 app.use(express.urlencoded({ extended: false}));
 
-app.use(method("-method"));
+app.use(methodOverride("_method"));
 app.use(morgan('dev'));
 
 app.listen(port, () => {
