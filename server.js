@@ -12,7 +12,7 @@ const morgan = require("morgan");
 // PORT
 const port = process.env.PORT || "3000";
 
-const authController = require("./controllers/auth.js ");
+const authController = require("./controllers/auth.js");
 
 mongoose.connect(process.env.MONGODB_URI);
 
