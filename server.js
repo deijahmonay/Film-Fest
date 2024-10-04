@@ -52,8 +52,11 @@ app.use('/users/:userId/movies', moviesController);
 
 
 app.get("/", async(req, res) => {
-  res.render("index.ejs", {
-  });
+  if (req.session.user) {
+    res.redirect(`/users/${req.session.user._id}/movies`);
+  } else {
+    res.render('index.ejs');
+  }
 });
 
 
