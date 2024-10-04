@@ -11,6 +11,9 @@ const morgan = require("morgan");
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
 
+const isSignedIn = require('./middleware/is-signed-in.js');
+const passUserToView = require('./middleware/pass-user-to-view.js');
+
 // PORT
 const port = process.env.PORT || "3000";
 
@@ -23,12 +26,11 @@ mongoose.connection.on("connected", () => {
 });
 
 // MIDDLEWARE
-
 app.use(express.urlencoded({ extended: false}));
-
 app.use(methodOverride("_method"));
 app.use(morgan('dev'));
 
+// Session Middleware
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -36,18 +38,23 @@ app.use(
     saveUninitialized: true,
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI,
-    })
+    }),
   })
 );
 
 
+app.use(passUserToView);
+app.use("/auth", authController);
+app.use(isSignedIn);
+
+
+
 app.get("/", async(req, res) => {
   res.render("index.ejs", {
-    user: req.session.user,
   });
 });
 
-app.use("/auth", authController);
+
 
 
 app.listen(port, () => {
