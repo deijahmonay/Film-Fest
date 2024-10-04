@@ -13,6 +13,7 @@ const MongoStore = require("connect-mongo");
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
+const moviesController = require('./controllers/movies.js');
 
 // PORT
 const port = process.env.PORT || "3000";
@@ -46,6 +47,7 @@ app.use(
 app.use(passUserToView);
 app.use("/auth", authController);
 app.use(isSignedIn);
+app.use('/users/:userId/movies', moviesController);
 
 
 
