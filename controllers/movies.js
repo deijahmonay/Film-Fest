@@ -13,4 +13,8 @@ router.get('/', async(req, res) => {
   }
 });
 
+router.get('/new', async (req, res) => {
+  res.render('movies/new.ejs');
+});
+
 module.exports = router;
