@@ -9,5 +9,14 @@
   <%- include('../partials/_navbar.ejs') %>
   <h1>Your Flicks</h1>
   <a href="/users/<%=user._id%>/movies/new">Premiere a New Flick</a>
+  <ul>
+    <% movies.forEach((movie)=>{ %>
+      <li>
+        <a href="/users/<%= user._id %>/movies/<%= movie._id %>">
+        <%= movie.title %> - <%= movie.genre %>
+      </a>
+      </li>
+    <% }) %>
+  </ul>
 </body>
 </html>

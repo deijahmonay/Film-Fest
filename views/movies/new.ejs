@@ -8,7 +8,7 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1>Premiere Your Pick</h1>
-  <form action="" method="">
+  <form action="/users/<%= user._id %>/movies" method="POST">
     <label for="title">Title:</label>
     <input type="text" name="title" id="title" required />
 
