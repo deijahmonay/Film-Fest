@@ -21,6 +21,7 @@
     "install": "^0.13.0",
     "method-override": "^3.0.0",
     "mongoose": "^8.7.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "vanilla-framework": "^4.16.0"
   }
 }

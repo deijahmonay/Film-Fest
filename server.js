@@ -1,6 +1,3 @@
-// ========= server.js ========
-
-// IMPORTS
 require('dotenv').config();
 const express = require("express");
 const app = express();
@@ -45,9 +42,6 @@ app.use(
 
 
 app.use(passUserToView);
-app.use("/auth", authController);
-app.use(isSignedIn);
-app.use('/users/:userId/movies', isSignedIn, moviesController);
 
 app.get("/", async(req, res) => {
   if (req.session.user) {
@@ -56,6 +50,12 @@ app.get("/", async(req, res) => {
     res.render('index.ejs');
   }
 });
+
+app.use("/auth", authController);
+app.use(isSignedIn);
+app.use('/users/:userId/movies', isSignedIn, moviesController);
+
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}.`);
