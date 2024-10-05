@@ -47,7 +47,7 @@ app.use(
 app.use(passUserToView);
 app.use("/auth", authController);
 app.use(isSignedIn);
-app.use('/users/:userId/movies', moviesController);
+app.use('/users/:userId/movies', isSignedIn, moviesController);
 
 
 

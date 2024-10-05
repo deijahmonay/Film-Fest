@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title><%= movie.title %></title>
 </head>
 <body>
-  
+  <%- include('../partials/_navbar.ejs') %>
+  <h1><%= movie.title %></h1>
+
+  <% if (movie.genre) { %>
+  <p>Genre: <%= movie.genre %></p>
+  <% } %>
+
+  <% if (movie.releaseDate) { %>
+  <p>Release Date: <%= movie.releaseDate.toDateString() %></p>
+  <% } %>
+
+  <p>Watch Status: <%= movie.watchStatus %></p>
 </body>
 </html>
