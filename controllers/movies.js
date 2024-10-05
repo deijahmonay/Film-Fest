@@ -4,15 +4,15 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 
-router.get('/', async(req, res) => {
+router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     res.render('movies/index.ejs', {
       movies: currentUser.movies,
     });
   } catch (error) {
-    console.log(error)
-    res.redirect('/')
+    console.log(error);
+    res.redirect('/');
   }
 });
 
@@ -26,7 +26,7 @@ router.post('/', async (req,res) => {
   currentUser.movies.push(req.body);
 
   await currentUser.save();
-  res.redirect(`/users/{currentUser._id}/movies`);
+  res.redirect(`/users/${currentUser._id}/movies`);
 } catch (error) {
   console.log(error);
   res.redirect('/')
@@ -41,11 +41,24 @@ router.get('/:movieId', async (req, res) => {
     res.render('movies/show.ejs', { movie: movie });
   } else {
     res.redirect('/');
-  }
+    }
   } catch (error) {
     console.log(error);
-    res.redirect('/')
+    res.redirect('/');
   }
+  });
+
+  router.delete('/:movieId', async (req, res) => {
+    try {
+      const currentUser = await User.findById(req.session.user._id);
+      currentUser.movies.id(req.params.movieId).deleteOne();
+
+      await currentUser.save();
+      res.redirect(`/user/${currentUser._id}/movies`);
+    } catch (error) {
+      console.log(error);
+      res.redirect('/');
+    }
   });
 
 module.exports = router;

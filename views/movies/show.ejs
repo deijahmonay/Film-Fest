@@ -18,5 +18,11 @@
   <% } %>
 
   <p>Watch Status: <%= movie.watchStatus %></p>
+  <form
+  action="/users/<%= user._id %>/movies/<%= movie._id %>?_method=DELETE"
+  method="POST">
+
+  <button type="submit">Trash this Flick!</button>
+</form>
 </body>
 </html>
