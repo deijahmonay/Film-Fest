@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>Your Flicks</title>
+  <title>Your Flicks🎥</title>
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
-  <h1>Your Flicks</h1>
-  <a href="/users/<%= user._id %>/movies/new">Add a New Movie</a>
+  <div class="all-movies-body">
+  <div class="all-movies-header">
+  <h1>Add to Your Movie Collection</h1>
+  <a class="add-movie-link" href="/users/<%= user._id %>/movies/new">Add a New Movie</a>
+</div>
   <ul>
     <% movies.forEach((movie) => { %>
       <li>
@@ -19,5 +22,6 @@
       </li>
     <% }) %>
   </ul>
+</div>
 </body>
 </html>

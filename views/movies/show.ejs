@@ -8,24 +8,24 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <div class="show-body">
+  <div class="show-header">
   <h1><%= movie.title %></h1>
-
+    <div class="show-details">
   <% if (movie.genre) { %>
     <p>Genre: <%= movie.genre %></p>
   <% } %>
-
   <% if (movie.releaseDate) { %>
     <p>Release Date: <%= movie.releaseDate.toDateString() %></p>
   <% } %>
-
   <p>Watch Status: <%= movie.watchStatus %></p>
-
   <form action="/users/<%= user._id %>/movies/<%= movie._id %>/edit" method="GET">
     <button type="submit">Edit Movie</button>
   </form>
-
   <form action="/users/<%= user._id %>/movies/<%= movie._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Movie</button>
   </form>
+</div>
+</div>
 </body>
 </html>

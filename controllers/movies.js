@@ -23,7 +23,6 @@ router.get('/:movieId', async (req, res) => {
     const movie = currentUser.movies.id(req.params.movieId);
     res.render('movies/show.ejs', { movie });
   } catch (err) {
-    console.log(err);
     res.redirect('/');
   }
 });
@@ -34,7 +33,6 @@ router.get('/:movieId/edit', async (req, res) => {
     const movie = currentUser.movies.id(req.params.movieId);
     res.render('movies/edit.ejs', { movie });
   } catch (err) {
-    console.log(err);
     res.redirect('/');
   }
 });
@@ -46,7 +44,6 @@ router.post('/', async (req, res) => {
     await currentUser.save();
     res.redirect(`/users/${currentUser._id}/movies`);
   } catch (err) {
-    console.log(err);
     res.redirect('/');
   }
 });
@@ -59,7 +56,6 @@ router.put('/:movieId', async (req, res) => {
     await currentUser.save();
     res.redirect(`/users/${currentUser._id}/movies/${req.params.movieId}`);
   } catch (err) {
-    console.log(err);
     res.redirect('/');
   }
 });
@@ -67,11 +63,10 @@ router.put('/:movieId', async (req, res) => {
 router.delete('/:movieId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    currentUser.movies.id(req.params.movieId).remove();
+    currentUser.movies.id(req.params.movieId).deleteOne();
     await currentUser.save();
     res.redirect(`/users/${currentUser._id}/movies`);
   } catch (err) {
-    console.log(err);
     res.redirect('/');
   }
 });
