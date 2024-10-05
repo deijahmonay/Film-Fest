@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= movie.title %></title>
+  <title>Edit <%= movie.title %></title>
 </head>
 <body>
-  <%- include('..partials/navcar.ejs') %>
+  <%- include('../partials/_navbar.ejs') %> <!-- Corrected include path -->
+  
   <h1>Edit <%= movie.title %></h1>
 
-  <form action="/user/<%= user._id %>/movies/<%= movie._id %>?_method=PUT" method="POST">
+  <form action="/users/<%= user._id %>/movies/<%= movie._id %>?_method=PUT" method="POST">
     <label for="title">Title:</label>
-    <input type="text" name="title id=title" value="<%= movie.title %>"/>
+    <input type="text" name="title" id="title" value="<%= movie.title %>" />
 
-  <label for="genre">Genre:</label>
-  <input type="text" name="genre" id="genre" value="<%= movie.genre %>"/>
+    <label for="genre">Genre:</label>
+    <input type="text" name="genre" id="genre" value="<%= movie.genre %>" />
 
-  <label for="releaseDate">Release Date:</label>
-  <input type="date" name="releaseDate" id="releaseDate" value="<%= movie.releaseDate.toISOString().substring(0,10) %>" />
+    <label for="releaseDate">Release Date:</label>
+    <input type="date" name="releaseDate" id="releaseDate" value="<%= movie.releaseDate.toISOString().substring(0, 10) %>" />
 
-  <label for="watchStatus">Watch Status:</label>
-  <select id="watchStatus" name="watchStatus">
-    <option value="Watched" <%= movie.watchStatus === "WantToWatch" ? "selected" : "" %>
-    > Want To Want
-  </option>
-  </select>
+    <label for="watchStatus">Watch Status:</label>
+    <select id="watchStatus" name="watchStatus">
+      <option value="Watched" <%= movie.watchStatus === "Watched" ? "selected" : "" %>>Watched</option>
+      <option value="WantToWatch" <%= movie.watchStatus === "WantToWatch" ? "selected" : "" %>>Want to Watch</option>
+    </select>
 
-  <button type="submit">Update Flick</button>
+    <button type="submit">Update Movie</button>
   </form>
 </body>
 </html>

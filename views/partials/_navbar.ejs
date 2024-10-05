@@ -1,9 +1,9 @@
 <nav>
-  <% if(user) { %>
-  <a href="/users/<%= user._id %>/movies">Your Flicks</a>
-  <a href="/auth/sign-out">Roll Credits!</a>
+  <% if (user) { %>
+    <a href="/users/<%= user._id %>/movies">Your Flicks</a>
+    <a href="/auth/sign-out">Sign Out</a>
   <% } else { %>
-  <a href="/auth/sign-in">Showtime! Sign-In</a>
-  <a href="/auth/sign-up">Opening Night Sign-Up</a>
+    <a href="/auth/sign-in">Sign In</a>
+    <a href="/auth/sign-up">Sign Up</a>
   <% } %>
 </nav>

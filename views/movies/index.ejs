@@ -8,12 +8,12 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1>Your Flicks</h1>
-  <a href="/users/<%=user._id%>/movies/new">Premiere a New Flick</a>
+  <a href="/users/<%= user._id %>/movies/new">Add a New Movie</a>
   <ul>
-    <% movies.forEach((movie)=>{ %>
+    <% movies.forEach((movie) => { %>
       <li>
         <a href="/users/<%= user._id %>/movies/<%= movie._id %>">
-        <%= movie.title %> - <%= movie.genre %>
+          <%= movie.title %> - <%= movie.genre %>
         </a>
       </li>
     <% }) %>
