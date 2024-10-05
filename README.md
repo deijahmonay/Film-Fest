@@ -3,7 +3,7 @@
 
 
 ## Project Description
-> An app that allows users to track movies they've already watched and want to watch in one place.
+> An app that allows users to track movies they've already watched and want to watch in one place. This app is designed to help users keep track of any and all movies as the world becomes more streamlined and digital, they won't have to worry about forgetting their favorite movie.
 
 ## Repo Link
 > https://github.com/deijahmonay/Film-Fest.git
@@ -53,3 +53,7 @@
 * trillio
 * render
 * GitHub
+* https://www.youtube.com/watch?v=G3e-cpL7ofc&t=8746s
+* MongoDB
+* Render (I had an issue with Heroku-- Mark allowed me to deply via render)
+* 
