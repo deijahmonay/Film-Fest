@@ -18,6 +18,9 @@
   <% } %>
 
   <p>Watch Status: <%= movie.watchStatus %></p>
+  <a href="/users/<%= user._id %>/movies/<%= movie._id %>/edit">
+    Edit This Movie
+  </a>
   <form
   action="/users/<%= user._id %>/movies/<%= movie._id %>?_method=DELETE"
   method="POST">
