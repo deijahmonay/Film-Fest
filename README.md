@@ -47,3 +47,9 @@
 * Where to watch-- a way for users to list different platforms that stream the movies. Possibly a tag
 * Ability for users to write a short review of movies after they have been watched.
 * Ability to have certain movies show within the platform for all users. A search that can show other users reviews of movies.
+
+### Attributes:
+* supersimple.dev
+* trillio
+* render
+* GitHub

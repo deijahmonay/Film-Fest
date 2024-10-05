@@ -16,7 +16,6 @@ const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const moviesController = require('./controllers/movies.js');
 
-// PORT
 const port = process.env.PORT || "3000";
 const path = require('path');
 
@@ -28,13 +27,11 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}`);
 });
 
-// MIDDLEWARE
 app.use(express.urlencoded({ extended: false}));
 app.use(methodOverride("_method"));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Session Middleware
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -52,8 +49,6 @@ app.use("/auth", authController);
 app.use(isSignedIn);
 app.use('/users/:userId/movies', isSignedIn, moviesController);
 
-
-
 app.get("/", async(req, res) => {
   if (req.session.user) {
     res.redirect(`/users/${req.session.user._id}/movies`);
@@ -61,9 +56,6 @@ app.get("/", async(req, res) => {
     res.render('index.ejs');
   }
 });
-
-
-
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}.`);
