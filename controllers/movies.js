@@ -33,4 +33,7 @@ router.post('/', async (req,res) => {
 }
 });
 
+router.get(':movieId', (req, res) => {
+  res.semd(`here is your request param: ${req.params.movieId}`);
+});
 module.exports = router;
