@@ -7,6 +7,7 @@
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
+  <div class="signin-container">
   <h1>Welcome to Film Fest - Sign In to Start the Show! 🎬🎟️</h1>
   <form action="/auth/sign-in" method="POST">
     <label for="username">Username:</label>
@@ -15,7 +16,8 @@
     <label for="password">Password:</label>
     <input type="password" name="password" id="password" required />
 
-    <button typer="Submit">Start the Show!</button>
+    <button type="Submit">Start the Show!</button>
   </form>
+</div>
 </body>
 </html>
