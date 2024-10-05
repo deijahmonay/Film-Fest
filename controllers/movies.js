@@ -33,7 +33,18 @@ router.post('/', async (req,res) => {
 }
 });
 
-router.get(':movieId', (req, res) => {
-  res.semd(`here is your request param: ${req.params.movieId}`);
-});
+router.get(':movieId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const movie = currentUser.movies.id(req.params.movieId);
+    res.render('movies/show.ejs', {
+      movie: movie,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/')
+  }
+ 
+  });
+
 module.exports = router;
