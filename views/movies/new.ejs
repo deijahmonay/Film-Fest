@@ -8,5 +8,29 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1>Premiere Your Pick</h1>
+  <form action="" method="">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required />
+
+    <label for="genre">Genre:</label>
+    <input type="text" name="genre" id="genre" list="genreOptions" />
+    <datalist id="genreOptions">
+      <option value="Comedy"></option>
+      <option value="Action"></option>
+      <option value="Horror"></option>
+      <option value="Science Fiction"></option>
+      <option value="Drama"></option>
+      <option value="Sci-Fi"></option>
+    </datalist>
+
+    <label for="releaseDate">Release Date:</label>
+    <input type="date" name="releaseDate" id="releaseDate" required />
+
+    <label for="watchStatus">Watch Status:</label>
+    <select id="watchStatus" name="watchStatus">
+      <option value="Watched">Watched</option>
+      <option value="WantToWatch">Want To Watch</option>
+      </select>
+  </form>
 </body>
 </html>

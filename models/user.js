@@ -5,16 +5,16 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Genre: {
+  genre: {
     type: String,
   },
   releaseDate: {
     type: Date,
     required: true,
   },
-  watched: {
-    type: Boolean,
-    default: false,
+  watchStatus: {
+    type: String,
+    enum: ['Watched', 'WantToWatch'],
   },
 });
 
