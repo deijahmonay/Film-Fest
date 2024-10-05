@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
+
+body {
+  font-family: 'Play', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #29b6b6;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #2e2e2e;
+  padding: 1rem;
+}
+
+nav a:hover {
+  color: #ffd500;
+}
+
+h1 {
+  color: #d62828;
+  text-align: center;
+  margin: 2rem;
+}

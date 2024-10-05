@@ -6,13 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎬Film Fest🎞️</title>
 </head>
-<body>
-  <%- include('./partials/_navbar.ejs') %>
-  <h1>Welcome to Film Fest!🍿🎞️</h1>
-  <h2>A movie tracker application.</h2>
-  <p> Please sign-in or sign-up to grab your front-row seats! </p>
+<body class="index-body">
+  <%- include('./partials/_navbar.ejs') %>\
+  <div class="index-container">
+    <div class="text-container">
+    <h1 class="main-header">Welcome to Film Fest!🍿🎞️</h1>
+    <!-- <h2>A movie tracker application.</h2> -->
+    <p class="subheader"> Please sign-in or sign-up to grab your front-row seats! </p>
+  </div>
+  <div class="auth-links">
   <a href="/auth/sign-up">Sign up</a> or
   <a href="/auth/sign-in">Sign in</a>
-  <!-- <a href="/auth/sign-out">End Scene🎬</a> -->
+  <a href="/auth/sign-out">End Scene🎬</a>
+    </div>
+  </div>
 </body>
 </html>

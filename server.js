@@ -18,6 +18,7 @@ const moviesController = require('./controllers/movies.js');
 
 // PORT
 const port = process.env.PORT || "3000";
+const path = require('path');
 
 const authController = require("./controllers/auth.js");
 
@@ -31,6 +32,7 @@ mongoose.connection.on("connected", () => {
 app.use(express.urlencoded({ extended: false}));
 app.use(methodOverride("_method"));
 app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Session Middleware
 app.use(
