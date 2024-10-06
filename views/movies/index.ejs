@@ -7,21 +7,17 @@
   <title>Your Flicks🎥</title>
 </head>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
-  <div class="all-movies-body">
-  <div class="all-movies-header">
-  <h1>Add to Your Movie Collection</h1>
-  <a class="add-movie-link" href="/users/<%= user._id %>/movies/new">Add a New Movie</a>
-</div>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add to Your Movie Collection</h1>
+    <a class="add-movie-link" href="/users/<%= user._id %>/movies/new">Add a New Movie</a>
   <ul>
     <% movies.forEach((movie) => { %>
       <li>
         <a href="/users/<%= user._id %>/movies/<%= movie._id %>">
-          <%= movie.title %> - <%= movie.genre %>
+        <%= movie.title %> - <%= movie.genre %>
         </a>
       </li>
-    <% }) %>
-  </ul>
-</div>
+      <% }) %>
+    </ul>
 </body>
 </html>

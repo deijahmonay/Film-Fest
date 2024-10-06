@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎬Film Fest🎞️</title>
+  <style>
+    .filmimg {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      flex-direction: left;
+      text-align: center;
+      width: 200px;
+    }
+  </style>
 </head>
 <body class="index-body">
-  <img src="stylesheets/film-fest-logo.png" />
+  <img class="filmimg" src="stylesheets/film-fest-logo.png" />
   <h1 class="main-header">Welcome to Film Fest!🍿🎞️</h1>
   <p class="subheader"> Please sign-in or sign-up to grab your front-row seats!</p>
   <%- include('./partials/_navbar.ejs') %>
