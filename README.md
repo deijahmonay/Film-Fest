@@ -1,5 +1,6 @@
 ## Film Fest  🍿
-![<img width="930" alt="Screenshot 2024-10-05 at 8 52 10 AM" src="https://github.com/user-attachments/assets/c1c6aa7c-9964-4f79-b4e1-4e10a01b42dc">]
+![Screenshot 2024-10-05 at 4 55 13 PM](https://github.com/user-attachments/assets/a925e37b-fada-44c3-9b83-3e342d4bba9a)
+
 
 
 ## Project Description
